@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salon</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Roboto:300,400,500,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sprite SVG -->
+    <svg style="display: none;">
+
+        <!-- Gallery -->
+        <symbol id="view" viewBox="0 0 59.2 59.2">
+            <g>
+                <path d="M51.062,21.561c-11.889-11.889-31.232-11.889-43.121,0L0,29.501l8.138,8.138c5.944,5.944,13.752,8.917,21.561,8.917
+                            s15.616-2.972,21.561-8.917l7.941-7.941L51.062,21.561z M49.845,36.225c-11.109,11.108-29.184,11.108-40.293,0l-6.724-6.724
+                            l6.527-6.527c11.109-11.108,29.184-11.108,40.293,0l6.724,6.724L49.845,36.225z"/>
+                <path d="M28.572,21.57c-3.86,0-7,3.14-7,7c0,0.552,0.448,1,1,1s1-0.448,1-1c0-2.757,2.243-5,5-5c0.552,0,1-0.448,1-1
+                            S29.125,21.57,28.572,21.57z"/>
+                <path d="M29.572,16.57c-7.168,0-13,5.832-13,13s5.832,13,13,13s13-5.832,13-13S36.741,16.57,29.572,16.57z M29.572,40.57
+                            c-6.065,0-11-4.935-11-11s4.935-11,11-11s11,4.935,11,11S35.638,40.57,29.572,40.57z"/>
+                </g>
+        </symbol>
+
+
+        <symbol id="like" viewBox="0 0 51.997 51.997">
+            <g>
+                <path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
+                                c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
+                                c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
+                                C52.216,18.553,51.97,16.611,51.911,16.242z M49.521,21.261c-0.984,4.172-3.265,7.973-6.59,10.985L25.855,47.481L9.072,32.25
+                                c-3.331-3.018-5.611-6.818-6.596-10.99c-0.708-2.997-0.417-4.69-0.416-4.701l0.015-0.101C2.725,9.139,7.806,3.826,14.158,3.826
+                                c4.687,0,8.813,2.88,10.771,7.515l0.921,2.183l0.921-2.183c1.927-4.564,6.271-7.514,11.069-7.514
+                                c6.351,0,11.433,5.313,12.096,12.727C49.938,16.57,50.229,18.264,49.521,21.261z"/>
+            </g>
+        </symbol>
+  
+        <symbol id="cart" viewBox="0 0 60 60">
+            <g>
+                <path d="M11.68,13l-0.833-5h-2.99C7.411,6.28,5.859,5,4,5C1.794,5,0,6.794,0,9s1.794,4,4,4c1.859,0,3.411-1.28,3.858-3h1.294l0.5,3
+                H9.614l5.171,26.016c-2.465,0.188-4.518,2.086-4.76,4.474c-0.142,1.405,0.32,2.812,1.268,3.858C12.242,48.397,13.594,49,15,49h2
+                c0,3.309,2.691,6,6,6s6-2.691,6-6h11c0,3.309,2.691,6,6,6s6-2.691,6-6h4c0.553,0,1-0.447,1-1s-0.447-1-1-1h-4.35
+                c-0.826-2.327-3.043-4-5.65-4s-4.824,1.673-5.65,4h-11.7c-0.826-2.327-3.043-4-5.65-4s-4.824,1.673-5.65,4H15
+                c-0.842,0-1.652-0.362-2.224-0.993c-0.577-0.639-0.848-1.461-0.761-2.316c0.152-1.509,1.546-2.69,3.173-2.69h0.791
+                c0.014,0,0.025,0,0.039,0h38.994C57.763,41,60,38.763,60,36.013V13H11.68z M4,11c-1.103,0-2-0.897-2-2s0.897-2,2-2s2,0.897,2,2
+                S5.103,11,4,11z M46,45c2.206,0,4,1.794,4,4s-1.794,4-4,4s-4-1.794-4-4S43.794,45,46,45z M23,45c2.206,0,4,1.794,4,4s-1.794,4-4,4
+                s-4-1.794-4-4S20.794,45,23,45z M58,36.013C58,37.66,56.66,39,55.013,39H16.821l-4.77-24H58V36.013z"/>
+            <g>
+        </symbol>
+        <!-- / Gallery -->
+
+        <!-- Journal -->
+        <symbol id="box" viewBox="0 0 512 512">
+            <g>
+                <path d="M503.15,125.742c-0.071-0.256-0.2-0.482-0.294-0.729c-0.157-0.458-0.354-0.901-0.586-1.326
+                            c-0.794-1.123-1.757-2.116-2.853-2.946c-0.115-0.071-0.244-0.098-0.36-0.164c-0.109-0.061-0.193-0.155-0.306-0.211L259.816,0.9
+                            c-2.403-1.2-5.23-1.2-7.633,0L13.25,120.367c-0.115,0.057-0.198,0.152-0.308,0.213c-0.117,0.064-0.246,0.092-0.358,0.162
+                            c-0.24,0.174-0.47,0.361-0.69,0.559c-0.274,0.196-0.535,0.408-0.783,0.635c-0.3,0.311-0.576,0.644-0.825,0.997
+                            c-0.198,0.241-0.384,0.493-0.555,0.754c-0.231,0.422-0.426,0.863-0.582,1.318c-0.112,0.241-0.211,0.488-0.298,0.739
+                            c-0.206,0.734-0.313,1.493-0.317,2.256v256c-0.001,3.232,1.825,6.188,4.717,7.633L252.183,511.1
+                            c0.127,0.063,0.271,0.038,0.4,0.094c2.151,1.074,4.682,1.074,6.833,0c0.129-0.056,0.273-0.031,0.4-0.094L498.75,391.633
+                            c2.891-1.446,4.717-4.401,4.717-7.633V128C503.463,127.236,503.356,126.477,503.15,125.742z M256,18.075L475.85,128
+                            l-66.25,33.125L189.75,51.2L256,18.075z M170.666,60.742l219.85,109.925l-15.05,7.525L155.617,68.267L170.666,60.742z
+                             M401.066,184.475v15.05l-51.2,25.6v-15.05L401.066,184.475z M136.533,77.808l219.85,109.925l-15.05,7.525L121.483,85.333
+                            L136.533,77.808z M247.466,489.658L25.6,378.725V141.808l221.867,110.933V489.658z M256,237.925L36.15,128l66.25-33.125
+                            L322.25,204.8L256,237.925z M486.4,378.725L264.533,489.658V252.742l68.267-34.133v20.325c0.001,2.957,1.532,5.704,4.048,7.258
+                            s5.657,1.697,8.302,0.375l68.267-34.133c2.891-1.446,4.717-4.401,4.717-7.633v-28.858l68.267-34.133V378.725z"/>
+                <path d="M410.5,228.942l-75.9,37.95c-11.592,5.75-18.909,17.589-18.867,30.529v4.504c-0.014,5.921,3.046,11.425,8.083,14.538
+                            c5.036,3.113,11.328,3.389,16.617,0.729l75.9-37.95c11.592-5.75,18.909-17.589,18.867-30.529v-4.504
+                            c0.002-5.916-3.06-11.411-8.093-14.521S415.79,226.295,410.5,228.942z M418.133,248.713c0.021,6.469-3.637,12.388-9.433,15.263
+                            l-75.9,37.95v-4.504c-0.021-6.469,3.637-12.388,9.433-15.263l75.9-37.95V248.713z"/>
+            </g>
+        </symbol>
+
+        <symbol id="chat" viewBox="0 0 60 60">
+            <g>
+                <path d="M10,25.465h13c0.553,0,1-0.448,1-1s-0.447-1-1-1H10c-0.553,0-1,0.448-1,1S9.447,25.465,10,25.465z"/>
+                <path d="M36,29.465H10c-0.553,0-1,0.448-1,1s0.447,1,1,1h26c0.553,0,1-0.448,1-1S36.553,29.465,36,29.465z"/>
+                <path d="M36,35.465H10c-0.553,0-1,0.448-1,1s0.447,1,1,1h26c0.553,0,1-0.448,1-1S36.553,35.465,36,35.465z"/>
+                <path d="M54.072,2.535L19.93,2.465c-3.27,0-5.93,2.66-5.93,5.93v5.124l-8.07,0.017c-3.27,0-5.93,2.66-5.93,5.93v21.141
+                            c0,3.27,2.66,5.929,5.93,5.929H12v10c0,0.413,0.254,0.784,0.64,0.933c0.117,0.045,0.239,0.067,0.36,0.067
+                            c0.276,0,0.547-0.115,0.74-0.327l9.704-10.675l16.626-0.068c3.27,0,5.93-2.66,5.93-5.929v-0.113l5.26,5.786
+                            c0.193,0.212,0.464,0.327,0.74,0.327c0.121,0,0.243-0.022,0.36-0.067c0.386-0.149,0.64-0.52,0.64-0.933v-10h1.07
+                            c3.27,0,5.93-2.66,5.93-5.929V8.465C60,5.196,57.341,2.536,54.072,2.535z M44,40.536c0,2.167-1.763,3.929-3.934,3.929l-17.07,0.07
+                            c-0.28,0.001-0.548,0.12-0.736,0.327L14,53.949v-8.414c0-0.552-0.447-1-1-1H5.93c-2.167,0-3.93-1.763-3.93-3.929V19.465
+                            c0-2.167,1.763-3.93,3.932-3.93l9.068-0.019c0,0,0,0,0,0c0.001,0,0.001,0,0.002,0l25.068-0.052c2.167,0,3.93,1.763,3.93,3.93
+                            v18.441V40.536z M58,29.606c0,2.167-1.763,3.929-3.93,3.929H52c-0.553,0-1,0.448-1,1v8.414l-5-5.5V19.395
+                            c0-3.27-2.66-5.93-5.932-5.93L16,13.514v-5.12c0-2.167,1.763-3.93,3.928-3.93l34.141,0.07c0.001,0,0.001,0,0.002,0
+                            c2.167,0,3.93,1.763,3.93,3.93V29.606z"/>
+            </g>
+        </symbol>
+        <!-- / Journal -->
+    </svg>
+    <!-- / Sprite SVG -->
+
+
+    <!-- Header -->
+    <header class="section-header-under">
+        <div class="section-inner">
+            <div class="section-container">
+                <div class="header-contacts">
+                    Phone: +01 256 25 235 &nbsp;&nbsp;| &nbsp;&nbsp;email: info@eiser.com
+                </div>
+                <div class="header-additional">
+                    <a href="#">gift card &nbsp;|</a>
+                    <a href="#">track order &nbsp;|</a>
+                    <a href="#">track order</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="section-header">
+        <div class="section-inner">
+            <div class="section-container">
+                <div class="header-logo">Silon<span class="dot--red">.</span></div>
+                <div class="header-links">
+                    <nav class="header-nav">
+                        <ul class="header-ul">
+                            <li class="header-links home__link">
+                                <a href="#" class="home">Home</a>
+                                <ul class="home_submenu">
+                                    <li>
+                                        <a href="">HOME 01</a>
+                                    </li>
+                                    <li>
+                                        <a href="">HOME 02</a>
+                                    </li>
+                                    <li>
+                                        <a href="">HOME 03</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header-links">
+                                <a href="#">Shop</a>
+                            </li>
+                            <li class="header-links">
+                                <a href="#">Blog</a>
+                            </li>
+                            <li class="header-links">
+                                <a href="#">Products</a>
+                            </li>
+                            <li class="header-links">
+                                <a href="#">Brands</a>
+                            </li>
+                            <li class="header-links">
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-icons">
+                    <div class="header-icons__item">
+                        <a href="#">
+                            <img src="img/header/icons/search.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="header-icons__item">
+                        <a href="#">
+                            <img src="img/header/icons/cart.svg" alt="">
+                        </a>
+                        <div class="icons__red-ball">3</div>
+                    </div>
+                    <div class="header-icons__item">
+                        <a href="#">
+                            <img src="img/header/icons/like.svg" alt="">
+                        </a>
+                        <div class="icons__red-ball">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / Header -->
+
+
+    <!-- Intro -->
+    <div class="section-intro">
+        <div class="section-inner">
+            <div class="section-container">
+                <div class="section-intro__content">
+                    <div class="section-intro__content__inner">
+                        <div class="intro__suptitle">ultimate collection</div>
+                        <div class="intro__title">complete women fashion here</div>
+                        <div class="intro__button">
+                            <button type="button">shop now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-intro__img">
+                    <img src="img/intro_bg/inro-1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / Intro -->
+
+
+    <!--   Featured -->
+    <div class="section-featured">
+        <div class="section-inner">
+            <div class="section-container">
+                <div class="block__header">
+                    <div class="block__title">
+                        featured product
+                    </div>
+                </div>
+                <div class="gallery">
+                    <div class="section-gallery__item" id="item-1">
+                        <div class="section-gallery-photo">
+                            <img src="img/featured/feauterd-1.jpg" alt="">
+                            <div class="gallery-icons item-1">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-1">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-1">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-1">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-2">
+                        <div class="section-gallery-photo">
+                            <img src="img/featured/feauterd-2.jpg" alt="">
+                            <div class="gallery-icons item-2">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-2">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-2">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-2">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-3">
+                        <div class="section-gallery-photo">
+                            <img src="img/featured/feauterd-3.jpg" alt="">
+                            <div class="gallery-icons item-3">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-3">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-3">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-3">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- / Featured -->
+
+
+    <!-- Feature -->
+    <div class="section-feature">
+        <div class="section-inner">
+            <div class="section-container">
+                <div class="section-feature__content">
+                    <div class="section-feature__content__inner">
+                        <div class="feature__title">50% off</div>
+                        <div class="feature__subtitle">all women’s collection</div>
+                        <div class="feature__button">
+                            <button type="button">shop now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-feature__img">
+                    <img src="img/feature/feature.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / Feature -->
+
+
+    <!--   Popular -->
+    <div class="section-popular">
+        <div class="section-inner">
+            <div class="section-container">
+                <div class="block__header">
+                    <div class="block__title">
+                        most popular
+                    </div>
+                </div>
+                <div class="gallery">
+                    <div class="section-gallery__item" id="item-4">
+                        <div class="section-gallery-photo">
+                            <img src="img/most_popular/popular-1.jpg" alt="">
+                            <div class="gallery-icons item-4">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-4">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-4">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-4">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-5">
+                        <div class="section-gallery-photo">
+                            <img src="img/most_popular/popular-2.jpg" alt="">
+                            <div class="gallery-icons item-5">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-5">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-5">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-5">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-6">
+                        <div class="section-gallery-photo">
+                            <img src="img/most_popular/popular-3.jpg" alt="">
+                            <div class="gallery-icons item-6">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-6">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-6">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-6">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-7">
+                        <div class="section-gallery-photo">
+                            <img src="img/most_popular/popular-4.jpg" alt="">
+                            <div class="gallery-icons item-7">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-7">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-7">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-7">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- / Popular -->
+
+    <!--   Advantage -->
+    <div class="section-advantage">
+        <div class="section-inner">
+            <div class="section-container">
+                <div class="section__advantage__items">
+                    <div class="advantage-item">
+                        <div class="advantage__photo">
+                            <img src="img/advantage/advantage-1.png" alt="">
+                        </div>
+                        <div class="advantage__content">
+                            <div class="advantage__title">
+                                Money back gurantee
+                            </div>
+                            <div class="advantage__text">
+                                great fill signs he evening
+                            </div>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage__photo">
+                            <img src="img/advantage/advantage-2.png" alt="">
+                        </div>
+                        <div class="advantage__content">
+                            <div class="advantage__title">
+                                Money back gurantee
+                            </div>
+                            <div class="advantage__text">
+                                great fill signs he evening
+                            </div>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage__photo">
+                            <img src="img/advantage/advantage-3.png" alt="">
+                        </div>
+                        <div class="advantage__content">
+                            <div class="advantage__title">
+                                Money back gurantee
+                            </div>
+                            <div class="advantage__text">
+                                great fill signs he evening
+                            </div>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage__photo">
+                            <img src="img/advantage/advantage-4.png" alt="">
+                        </div>
+                        <div class="advantage__content">
+                            <div class="advantage__title">
+                                Money back gurantee
+                            </div>
+                            <div class="advantage__text">
+                                great fill signs he evening
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / Advantage -->
+
+
+    <!--   Trending -->
+    <div class="section-trending">
+        <div class="section-inner">
+            <div class="section-container">
+                <div class="block__header">
+                    <div class="block__title">
+                        trending products
+                    </div>
+                </div>
+
+                <!-- Gallery-1 -->
+                <div class="gallery">
+                    <div class="section-gallery__item" id="item-8">
+                        <div class="section-gallery-photo">
+                            <img src="img/trending/trending-1.jpg" alt="">
+                            <div class="gallery-icons item-8">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-8">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-8">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-8">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-9">
+                        <div class="section-gallery-photo">
+                            <img src="img/trending/trending-2.jpg" alt="">
+                            <div class="gallery-icons item-9">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-9">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-9">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-9">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-10">
+                        <div class="section-gallery-photo">
+                            <img src="img/trending/trending-3.jpg" alt="">
+                            <div class="gallery-icons item-10">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-10">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-10">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-10">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-11">
+                        <div class="section-gallery-photo">
+                            <img src="img/trending/trending-4.jpg" alt="">
+                            <div class="gallery-icons item-11">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-11">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-11">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-11">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery-2 -->
+                <div class="gallery">
+                    <div class="section-gallery__item" id="item-12">
+                        <div class="section-gallery-photo">
+                            <img src="img/trending/trending-5.jpg" alt="">
+                            <div class="gallery-icons item-12">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-12">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-12">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-12">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-13">
+                        <div class="section-gallery-photo">
+                            <img src="img/trending/trending-6.jpg" alt="">
+                            <div class="gallery-icons item-13">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-13">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-13">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-13">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-14">
+                        <div class="section-gallery-photo">
+                            <img src="img/trending/trending-7.jpg" alt="">
+                            <div class="gallery-icons item-14">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-14">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-14">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-14">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-gallery__item" id="item-15">
+                        <div class="section-gallery-photo">
+                            <img src="img/trending/trending-8.jpg" alt="">
+                            <div class="gallery-icons item-15">
+                                <div class="gallery-icons__inner">
+                                    <div class="icon item-15">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#view"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-15">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#like"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="icon item-15">
+                                        <svg class="icon_svg_sprite">
+                                            <use xlink:href="#cart"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-gallery-description">
+                            <div class="description__name">
+                                Red Women Purses
+                            </div>
+                            <div class="description__price">
+                                $35.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- / Trending -->
+
+
+    <!--  Journal -->
+    <div class="section-journal">
+        <div class="section-inner">
+            <div class="section-container">
+                <div class="block__header">
+                    <div class="block__title">
+                        silon journal
+                    </div>
+                </div>
+                <div class="section__journal__items">
+                    <div class="journal__item">
+                        <div class="journal__photo">
+                            <img src="img/journal/journal-1.jpg" alt="">
+                        </div>
+                        <div class="journal__content">
+                            <div class="journal__date">
+                                <a href="#">07 July, 2019</a>
+                            </div>
+                            <div class="journal__text">
+                                <a href="#">Were divided land his creature which
+                                        have evening subdue</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="journal__under">
+                            <div class="journal__item__under">
+                                <div class="journal__under__icon">
+                                    <svg class="icon_svg_sprite">
+                                        <use xlink:href="#box"></use>
+                                    </svg>
+                                </div>
+                                <div class="journal__under__text">
+                                    <a href="#">Women Fashion</a>
+                                </div>
+                            </div>
+                            <div class="journal__item__under">
+                                <div class="journal__under__icon">
+                                    <svg class="icon_svg_sprite">
+                                        <use xlink:href="#chat"></use>
+                                    </svg>
+                                </div>
+                                <div class="journal__under__text">
+                                    <a href="#">2 Comments</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="journal__item">
+                        <div class="journal__photo">
+                            <img src="img/journal/journal-2.jpg" alt="">
+                        </div>
+                        <div class="journal__content">
+                            <div class="journal__date">
+                                <a href="#">07 July, 2019</a>
+                            </div>
+                            <div class="journal__text">
+                                <a href="#">Were divided land his creature which
+                                            have evening subdue</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="journal__under">
+                            <div class="journal__item__under">
+                                <div class="journal__under__icon">
+                                    <svg class="icon_svg_sprite">
+                                            <use xlink:href="#box"></use>
+                                        </svg>
+                                </div>
+                                <div class="journal__under__text">
+                                    <a href="#">Women Fashion</a>
+                                </div>
+                            </div>
+                            <div class="journal__item__under">
+                                <div class="journal__under__icon">
+                                    <svg class="icon_svg_sprite">
+                                            <use xlink:href="#chat"></use>
+                                        </svg>
+                                </div>
+                                <div class="journal__under__text">
+                                    <a href="#">2 Comments</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="journal__item">
+                        <div class="journal__photo">
+                            <img src="img/journal/journal-3.jpg" alt="">
+                        </div>
+                        <div class="journal__content">
+                            <div class="journal__date">
+                                <a href="#">07 July, 2019</a>
+                            </div>
+                            <div class="journal__text">
+                                <a href="#">Were divided land his creature which
+                                                have evening subdue</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="journal__under">
+                            <div class="journal__item__under">
+                                <div class="journal__under__icon">
+                                    <svg class="icon_svg_sprite">
+                                                <use xlink:href="#box"></use>
+                                            </svg>
+                                </div>
+                                <div class="journal__under__text">
+                                    <a href="#">Women Fashion</a>
+                                </div>
+                            </div>
+                            <div class="journal__item__under">
+                                <div class="journal__under__icon">
+                                    <svg class="icon_svg_sprite">
+                                                <use xlink:href="#chat"></use>
+                                            </svg>
+                                </div>
+                                <div class="journal__under__text">
+                                    <a href="#">2 Comments</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / Journal -->
+
+
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
