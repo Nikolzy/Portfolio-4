@@ -1,9 +1,16 @@
 $(document).ready(function() {
+    // Header - Home (submenu)
     let submenu = $('.home_submenu');
     $('.home').on('click', function() {
         submenu.toggleClass('show__submenu');
     });
 
+    // Header links (icon)
+    $('.header-icons__item').on('mouseenter mouseleave', function() {
+        $(`.${this.id}`).toggleClass('svg_hover');
+    })
+
+    // Gallery icons
     $('.section-gallery__item').on('mouseenter mouseleave', function() {
         let get_id = this.id;
         let new_icon = $(`.icon.${get_id}`);
@@ -13,16 +20,20 @@ $(document).ready(function() {
         new_block_icons.toggleClass('show__icon');
     })
 
-    // $('.journal__item__under').on('mouseenter mouseleave', function() {
-    //     let get_id = this.id;
-    //     console.log(get_id);
-    //     let svg_fill = $(`.icon_svg_sprite.${get_id}`);
-    //     console.log(svg_fill);
-    //     let_new_id = $(`${get_id}1`);
-    //     console.log(let_new_id);
-    //     let get_element = getELementById(`${svg_fill}`);
-    //     console.log(svg_fill);
+    // Journal icons
+    $('.journal__item__under').on('mouseenter mouseleave', function() {
+        $(`.${this.id}`).toggleClass('svg_hover');
+    })
 
-    // $(svg_fill).toggleClass('svg_fill');
-    // })
+
+    // Footer button
+    $('.button').on('mouseenter mouseleave', function() {
+        $(this).toggleClass('hover_bg');
+        $(`.${this.id}`).toggleClass('hover_link');
+    })
+
+    // Footer social icon
+    $('.social__icon').on('mouseenter mouseleave', function() {
+        $(`.${this.id}`).toggleClass('social_hover');
+    })
 });

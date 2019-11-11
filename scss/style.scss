@@ -119,16 +119,6 @@
                     top: 0;
                     padding: 13px;
                 }
-                // img {
-                //     position: absolute;
-                //     content: '';
-                //     display: block;
-                //     width: 50px;
-                //     height: 50px;
-                //     left: 0;
-                //     top: 0;
-                //     padding: 13px;
-                // }
             }
         }
     }
@@ -169,6 +159,10 @@ li {
 
 a {
     text-decoration: none;
+}
+
+p {
+    margin: 0;
 }
 
 // === / Common ===
@@ -299,7 +293,7 @@ a {
                 position: relative;
                 // 
                 a {
-                    img {
+                    .icon_svg_sprite {
                         width: 18px;
                         height: 35px;
                     }
@@ -506,38 +500,34 @@ a {
 // ===   Advantage  ===
 .section-advantage {
     margin: 100px 0;
-    .section-inner {
-        .section-container {
-            .section__advantage__items {
-                display: flex;
-                justify-content: space-between;
-                .advantage-item {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    flex-basis: 23%;
-                    border: 1px solid #ebeef0;
+    .section__advantage__items {
+        display: flex;
+        justify-content: space-between;
+        .advantage-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-basis: 23%;
+            border: 1px solid #ebeef0;
+            .advantage {
+                &__photo {
+                    margin: 25px auto;
+                }
+                &__content {
+                    @include font-roboto;
+                    text-align: center;
                     .advantage {
-                        &__photo {
-                            margin: 25px auto;
+                        &__title {
+                            margin-bottom: 15px;
+                            font-size: 15px;
+                            font-weight: 500;
+                            text-transform: uppercase;
                         }
-                        &__content {
-                            @include font-roboto;
-                            text-align: center;
-                            .advantage {
-                                &__title {
-                                    margin-bottom: 15px;
-                                    font-size: 15px;
-                                    font-weight: 500;
-                                    text-transform: uppercase;
-                                }
-                                &__text {
-                                    margin-bottom: 25px;
-                                    font-size: 14px;
-                                    font-weight: 400;
-                                    color: #888888;
-                                }
-                            }
+                        &__text {
+                            margin-bottom: 25px;
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: #888888;
                         }
                     }
                 }
@@ -571,81 +561,77 @@ a {
 // ===    Journnal ===
 .section-journal {
     margin-bottom: 100px;
-    .section-inner {
-        .section-container {
-            @include block_header;
-            .section__journal__items {
+    .section-container {
+        @include block_header;
+        .section__journal__items {
+            display: flex;
+            justify-content: space-between;
+            .journal__item {
                 display: flex;
-                justify-content: space-between;
-                .journal__item {
-                    display: flex;
-                    flex-direction: column;
-                    flex-basis: 30%;
-                    hr {
-                        margin: 20px 0;
-                        background-color: #e1e1e1;
+                flex-direction: column;
+                flex-basis: 30%;
+                hr {
+                    margin: 20px 0;
+                    background-color: #e1e1e1;
+                }
+                .journal {
+                    &__photo {
+                        display: flex;
+                        width: 100%;
+                        height: auto;
                     }
-                    .journal {
-                        &__photo {
-                            display: flex;
-                            width: 100%;
-                            height: auto;
-                        }
-                        &__content {
-                            @include font-roboto;
-                            position: relative;
-                            .journal {
-                                &__date {
-                                    a {
-                                        color: #888888;
-                                    }
-                                    margin-top: 35px;
-                                    margin-left: 20px;
-                                    font-size: 13px;
-                                    font-weight: 400;
-                                    &:before {
-                                        content: '';
-                                        position: absolute;
-                                        display: block;
-                                        top: 38px;
-                                        left: 0;
-                                        width: 11px;
-                                        height: 6px;
-                                        background-color: #ff5353;
-                                    }
+                    &__content {
+                        @include font-roboto;
+                        position: relative;
+                        .journal {
+                            &__date {
+                                a {
+                                    color: #888888;
                                 }
-                                &__text {
-                                    margin-top: 10px;
-                                    font-size: 20px;
-                                    font-weight: 700;
-                                    a {
-                                        color: #000;
-                                    }
+                                margin-top: 35px;
+                                margin-left: 20px;
+                                font-size: 13px;
+                                font-weight: 400;
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    display: block;
+                                    top: 38px;
+                                    left: 0;
+                                    width: 11px;
+                                    height: 6px;
+                                    background-color: #ff5353;
+                                }
+                            }
+                            &__text {
+                                margin-top: 10px;
+                                font-size: 20px;
+                                font-weight: 700;
+                                a {
+                                    color: #000;
                                 }
                             }
                         }
-                        &__under {
+                    }
+                    &__under {
+                        display: flex;
+                        .journal__item__under {
                             display: flex;
-                            .journal__item__under {
-                                display: flex;
-                                &:not(:last-child) {
-                                    margin-right: 30px;
-                                }
-                                .journal {
-                                    &__under__icon {
+                            &:not(:last-child) {
+                                margin-right: 30px;
+                            }
+                            .journal {
+                                &__under__icon {
+                                    a {
+                                        color: #adadad;
                                         .icon_svg_sprite {
                                             width: 16px;
                                             height: 16px;
                                             fill: #adadad;
                                             margin-right: 8px;
-                                        }
-                                    }
-                                    &__under__text {
-                                        @include font-roboto;
-                                        font-size: 14px;
-                                        font-weight: 400;
-                                        a {
-                                            color: #adadad;
+                                            @include font-roboto;
+                                            font-size: 14px;
+                                            font-weight: 400;
                                         }
                                     }
                                 }
@@ -659,6 +645,184 @@ a {
 }
 
 // ===  / Journal ===
+// -----------------
+// ===    Follow us ===
+.section-follow {
+    margin-bottom: 50px;
+    .section-container {
+        @include block_header;
+        .section-follow__items {
+            display: flex;
+            justify-content: space-between;
+            .follow__item {
+                display: flex;
+                flex-basis: 22%;
+                position: relative;
+                overflow: hidden;
+                .follow__item {
+                    &__photo {
+                        display: flex;
+                        width: 100%;
+                        height: auto;
+                        a {
+                            display: flex;
+                            width: 100%;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    &__hover {
+                        opacity: 0;
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        top: 30px;
+                        left: 0;
+                        background-color: rgba(255, 55, 55, 0.7);
+                        transition: opacity .2s linear;
+                        transition: top 0.21s linear;
+                        .icon_svg_sprite {
+                            fill: #fff;
+                            position: absolute;
+                            display: block;
+                            width: 31px;
+                            height: 31px;
+                            top: 45%;
+                            left: 45%;
+                        }
+                        &:hover {
+                            opacity: 1;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ===  / Follow us ===
+// -----------------
+// ===  Footer ===
+.section-footer {
+    padding: 100px 0 0;
+    background-color: #eee7df;
+    ;
+    .footer-links {
+        display: flex;
+        .footer__item {
+            @include font-roboto;
+            display: flex;
+            flex-basis: 25%;
+            flex-direction: column;
+            .footer__item__title {
+                font-size: 16px;
+                font-weight: 700;
+                color: #000;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+            }
+            a {
+                font-size: 14px;
+                font-weight: 400;
+                color: #888888;
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+            }
+            .footer__buttons {
+                display: flex;
+                align-items: flex-end;
+                .button {
+                    padding: 8px 8px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    &:not(:last-child) {
+                        margin-right: 15px;
+                    }
+                    a {
+                        display: flex;
+                        .button {
+                            &__img {
+                                display: flex;
+                                align-items: center;
+                                margin-right: 7px;
+                                .icon_svg_sprite {
+                                    width: 20px;
+                                    height: 20px;
+                                    fill: #ff5353;
+                                }
+                            }
+                            &__text {
+                                @include font-roboto;
+                                text-transform: uppercase;
+                                color: #000;
+                                .btn_txt_1 {
+                                    font-size: 10px;
+                                    font-weight: 400;
+                                    margin-bottom: 3px;
+                                }
+                                .btn_txt_2 {
+                                    font-size: 13px;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .footer__social {
+                display: flex;
+                .social__icon {
+                    &:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                    a {
+                        display: flex;
+                        align-items: center;
+                        padding: 7px;
+                        background-color: #fff;
+                        .icon_svg_sprite {
+                            width: 16px;
+                            height: 16px;
+                        }
+                    }
+                }
+            }
+        }
+        .footer__item__last {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 25%;
+        }
+        hr {
+            margin: 26px 0 25px;
+        }
+    }
+    hr {
+        margin: 100px 0 0;
+    }
+    .footer-copyright {
+        padding: 25px 0;
+        .copyright__inner {
+            text-align: center;
+            p {
+                @include font-roboto;
+                font-size: 14px;
+                font-weight: 400;
+                color: #888888;
+                a {
+                    color: #ff5353;
+                }
+            }
+        }
+    }
+}
+
+// === / Footer ===
 // -----------------
 // ===    Hover ===
 .section-header {
@@ -688,25 +852,31 @@ a {
                 }
             }
         }
+        &-icons {
+            .header-icons__item {
+                a.svg_hover {
+                    .icon_svg_sprite {
+                        transition: fill .2s linear;
+                        fill: #ff5353;
+                    }
+                }
+            }
+        }
     }
 }
 
 .section-intro {
-    .section-inner {
-        .section-container {
-            .section-intro__content {
-                .section-intro__content__inner {
-                    .intro {
-                        &__button {
-                            button {
-                                transition: color .2s linear;
-                                transition: background-color .2s linear;
-                                &:hover {
-                                    cursor: pointer;
-                                    color: blue;
-                                    background-color: #fff;
-                                }
-                            }
+    .section-intro__content {
+        .section-intro__content__inner {
+            .intro {
+                &__button {
+                    button {
+                        transition: color .2s linear;
+                        transition: background-color .2s linear;
+                        &:hover {
+                            cursor: pointer;
+                            color: blue;
+                            background-color: #fff;
                         }
                     }
                 }
@@ -716,55 +886,43 @@ a {
 }
 
 .section-featured {
-    .section-inner {
-        .section-container {
-            .gallery {
-                .section-gallery__item {
-                    .section-gallery-photo {
-                        .gallery-icons {
-                            transition: opacity .2s linear;
-                            .gallery-icons__inner {
-                                .icon {
-                                    transition: background-color .2s linear;
-                                    &:hover {
-                                        cursor: pointer;
-                                        background-color: #ff5353;
-                                        fill: #fff;
-                                    }
-                                }
-                                .icon.align__icon {
-                                    opacity: 1;
-                                    margin-top: 0;
-                                    transition: margin-top .3s linear;
-                                }
-                            }
-                        }
-                        .gallery-icons.show__icon {
-                            opacity: 1;
+    .section-gallery__item {
+        .section-gallery-photo {
+            .gallery-icons {
+                .gallery-icons__inner {
+                    .icon {
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #ff5353;
+                            fill: #fff;
                         }
                     }
+                    .icon.align__icon {
+                        opacity: 1;
+                        margin-top: 0;
+                        transition: margin-top .3s linear;
+                    }
                 }
+            }
+            .gallery-icons.show__icon {
+                opacity: 1;
             }
         }
     }
 }
 
 .section-feature {
-    .section-inner {
-        .section-container {
-            .section-feature__content {
-                .section-feature__content__inner {
-                    .feature {
-                        &__button {
-                            button {
-                                transition: color .2s linear;
-                                transition: background-color .2s linear;
-                                &:hover {
-                                    cursor: pointer;
-                                    color: blue;
-                                    background-color: #fff;
-                                }
-                            }
+    .section-feature__content {
+        .section-feature__content__inner {
+            .feature {
+                &__button {
+                    button {
+                        transition: color .2s linear;
+                        transition: background-color .2s linear;
+                        &:hover {
+                            cursor: pointer;
+                            color: blue;
+                            background-color: #fff;
                         }
                     }
                 }
@@ -774,70 +932,60 @@ a {
 }
 
 .section-popular {
-    .section-inner {
-        .section-container {
-            .gallery {
-                .section-gallery__item {
-                    .section-gallery-photo {
-                        .gallery-icons {
-                            transition: opacity .2s linear;
-                            .gallery-icons__inner {
-                                .icon {
-                                    transition: background-color .2s linear;
-                                    &:hover {
-                                        cursor: pointer;
-                                        background-color: #ff5353;
-                                        fill: #fff;
-                                    }
-                                }
-                                .icon.align__icon {
-                                    opacity: 1;
-                                    margin-top: 0;
-                                    transition: margin-top .3s linear;
-                                }
-                            }
-                        }
-                        .gallery-icons.show__icon {
-                            opacity: 1;
+    .section-gallery__item {
+        .section-gallery-photo {
+            .gallery-icons {
+                transition: opacity .2s linear;
+                .gallery-icons__inner {
+                    .icon {
+                        transition: background-color .2s linear;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #ff5353;
+                            fill: #fff;
                         }
                     }
+                    .icon.align__icon {
+                        opacity: 1;
+                        margin-top: 0;
+                        transition: margin-top .3s linear;
+                    }
                 }
+            }
+            .gallery-icons.show__icon {
+                opacity: 1;
             }
         }
     }
 }
 
 .section-trending {
-    .section-inner {
-        .section-container {
-            .gallery {
-                &:not(:last-child) {
-                    margin-bottom: 80px;
-                }
-                .section-gallery__item {
-                    .section-gallery-photo {
-                        .gallery-icons {
-                            transition: opacity .2s linear;
-                            .gallery-icons__inner {
-                                .icon {
-                                    transition: background-color .2s linear;
-                                    &:hover {
-                                        cursor: pointer;
-                                        background-color: #ff5353;
-                                        fill: #fff;
-                                    }
-                                }
-                                .icon.align__icon {
-                                    opacity: 1;
-                                    margin-top: 0;
-                                    transition: margin-top .3s linear;
-                                }
+    .gallery {
+        &:not(:last-child) {
+            margin-bottom: 80px;
+        }
+        .section-gallery__item {
+            .section-gallery-photo {
+                .gallery-icons {
+                    transition: opacity .2s linear;
+                    .gallery-icons__inner {
+                        .icon {
+                            transition: background-color .2s linear;
+                            &:hover {
+                                cursor: pointer;
+                                background-color: #ff5353;
+                                fill: #fff;
                             }
                         }
-                        .gallery-icons.show__icon {
+                        .icon.align__icon {
                             opacity: 1;
+                            margin-top: 0;
+                            transition: margin-top .3s linear;
                         }
                     }
+                }
+                .gallery-icons.show__icon {
+                    opacity: 1;
                 }
             }
         }
@@ -845,49 +993,94 @@ a {
 }
 
 .section-journal {
-    .section-inner {
-        .section-container {
-            .section__journal__items {
-                .journal__item {
+    .section__journal__items {
+        .journal__item {
+            .journal {
+                &__content {
                     .journal {
-                        &__content {
-                            .journal {
-                                &__date {
-                                    a {
-                                        transition: color .2s linear;
-                                        &:hover {
-                                            color: #ff5353;
-                                        }
-                                    }
+                        &__date {
+                            a {
+                                transition: color .2s linear;
+                                &:hover {
+                                    color: #ff5353;
                                 }
-                                &__text {
-                                    a {
-                                        transition: color .2s linear;
-                                        &:hover {
-                                            color: #ff5353;
-                                        }
+                            }
+                        }
+                        &__text {
+                            a {
+                                transition: color .2s linear;
+                                &:hover {
+                                    color: #ff5353;
+                                }
+                            }
+                        }
+                    }
+                }
+                &__under {
+                    .journal__item__under {
+                        .journal {
+                            &__under__icon {
+                                a.svg_hover {
+                                    transition: color .2s linear;
+                                    color: #ff5353;
+                                    .icon_svg_sprite {
+                                        transition: fill .2s linear;
+                                        fill: #ff5353;
                                     }
                                 }
                             }
                         }
-                        &__under {
-                            .journal__item__under {
-                                .journal {
-                                    &__under__icon {
-                                        // .icon_svg_sprite.svg_fill {
-                                        //     fill: #ff5353;
-                                        // }
-                                    }
-                                    &__under__text {
-                                        a {
-                                            &:hover {
-                                                color: #ff5353;
-                                            }
-                                        }
-                                    }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-footer {
+    .footer-links {
+        .footer__item {
+            .footer__item__title {}
+            a {
+                transition: color .2s linear;
+                &:hover {
+                    color: #ff5353;
+                }
+            }
+            .footer__buttons {
+                .button.hover_bg {
+                    background-color: #ff5353;
+                    transition: background-color .3s linear;
+                    a.hover_link {
+                        .button {
+                            &__img {
+                                transition: fill .2s linear;
+                                .icon_svg_sprite {
+                                    fill: #fff;
+                                }
+                            }
+                            &__text {
+                                transition: color .2s linear;
+                                .btn_txt_1 {
+                                    color: #fff;
+                                }
+                                .btn_txt_2 {
+                                    color: #fff;
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+        .footer__social {
+            .social__icon {
+                a.social_hover {
+                    background-color: #ff5353;
+                    transition: background-color .2s linear;
+                    .icon_svg_sprite {
+                        fill: #fff;
+                        transition: fill .2s linear;
                     }
                 }
             }

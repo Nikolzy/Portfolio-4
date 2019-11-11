@@ -326,6 +326,9 @@ li {
 a {
   text-decoration: none; }
 
+p {
+  margin: 0; }
+
 .section-inner {
   max-width: 1200px;
   width: 100%;
@@ -421,7 +424,7 @@ a {
       justify-content: center;
       width: 47px;
       position: relative; }
-      .section-header .header-icons__item a img {
+      .section-header .header-icons__item a .icon_svg_sprite {
         width: 18px;
         height: 35px; }
       .section-header .header-icons__item .icons__red-ball {
@@ -688,26 +691,26 @@ a {
 
 .section-advantage {
   margin: 100px 0; }
-  .section-advantage .section-inner .section-container .section__advantage__items {
+  .section-advantage .section__advantage__items {
     display: flex;
     justify-content: space-between; }
-    .section-advantage .section-inner .section-container .section__advantage__items .advantage-item {
+    .section-advantage .section__advantage__items .advantage-item {
       display: flex;
       flex-direction: column;
       justify-content: center;
       flex-basis: 23%;
       border: 1px solid #ebeef0; }
-      .section-advantage .section-inner .section-container .section__advantage__items .advantage-item .advantage__photo {
+      .section-advantage .section__advantage__items .advantage-item .advantage__photo {
         margin: 25px auto; }
-      .section-advantage .section-inner .section-container .section__advantage__items .advantage-item .advantage__content {
+      .section-advantage .section__advantage__items .advantage-item .advantage__content {
         font-family: 'Roboto', sans-serif;
         text-align: center; }
-        .section-advantage .section-inner .section-container .section__advantage__items .advantage-item .advantage__content .advantage__title {
+        .section-advantage .section__advantage__items .advantage-item .advantage__content .advantage__title {
           margin-bottom: 15px;
           font-size: 15px;
           font-weight: 500;
           text-transform: uppercase; }
-        .section-advantage .section-inner .section-container .section__advantage__items .advantage-item .advantage__content .advantage__text {
+        .section-advantage .section__advantage__items .advantage-item .advantage__content .advantage__text {
           margin-bottom: 25px;
           font-size: 14px;
           font-weight: 400;
@@ -790,39 +793,39 @@ a {
 
 .section-journal {
   margin-bottom: 100px; }
-  .section-journal .section-inner .section-container .block__header {
+  .section-journal .section-container .block__header {
     margin: 150px auto 90px; }
-    .section-journal .section-inner .section-container .block__header .block__title {
+    .section-journal .section-container .block__header .block__title {
       font-family: 'Roboto', sans-serif;
       font-size: 36px;
       font-weight: bold;
       text-transform: uppercase;
       text-align: center; }
-  .section-journal .section-inner .section-container .section__journal__items {
+  .section-journal .section-container .section__journal__items {
     display: flex;
     justify-content: space-between; }
-    .section-journal .section-inner .section-container .section__journal__items .journal__item {
+    .section-journal .section-container .section__journal__items .journal__item {
       display: flex;
       flex-direction: column;
       flex-basis: 30%; }
-      .section-journal .section-inner .section-container .section__journal__items .journal__item hr {
+      .section-journal .section-container .section__journal__items .journal__item hr {
         margin: 20px 0;
         background-color: #e1e1e1; }
-      .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__photo {
+      .section-journal .section-container .section__journal__items .journal__item .journal__photo {
         display: flex;
         width: 100%;
         height: auto; }
-      .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__content {
+      .section-journal .section-container .section__journal__items .journal__item .journal__content {
         font-family: 'Roboto', sans-serif;
         position: relative; }
-        .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__content .journal__date {
+        .section-journal .section-container .section__journal__items .journal__item .journal__content .journal__date {
           margin-top: 35px;
           margin-left: 20px;
           font-size: 13px;
           font-weight: 400; }
-          .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__content .journal__date a {
+          .section-journal .section-container .section__journal__items .journal__item .journal__content .journal__date a {
             color: #888888; }
-          .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__content .journal__date:before {
+          .section-journal .section-container .section__journal__items .journal__item .journal__content .journal__date:before {
             content: '';
             position: absolute;
             display: block;
@@ -831,29 +834,163 @@ a {
             width: 11px;
             height: 6px;
             background-color: #ff5353; }
-        .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__content .journal__text {
+        .section-journal .section-container .section__journal__items .journal__item .journal__content .journal__text {
           margin-top: 10px;
           font-size: 20px;
           font-weight: 700; }
-          .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__content .journal__text a {
+          .section-journal .section-container .section__journal__items .journal__item .journal__content .journal__text a {
             color: #000; }
-      .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__under {
+      .section-journal .section-container .section__journal__items .journal__item .journal__under {
         display: flex; }
-        .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__under .journal__item__under {
+        .section-journal .section-container .section__journal__items .journal__item .journal__under .journal__item__under {
           display: flex; }
-          .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__under .journal__item__under:not(:last-child) {
+          .section-journal .section-container .section__journal__items .journal__item .journal__under .journal__item__under:not(:last-child) {
             margin-right: 30px; }
-          .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__under .journal__item__under .journal__under__icon .icon_svg_sprite {
+          .section-journal .section-container .section__journal__items .journal__item .journal__under .journal__item__under .journal__under__icon a {
+            color: #adadad; }
+            .section-journal .section-container .section__journal__items .journal__item .journal__under .journal__item__under .journal__under__icon a .icon_svg_sprite {
+              width: 16px;
+              height: 16px;
+              fill: #adadad;
+              margin-right: 8px;
+              font-family: 'Roboto', sans-serif;
+              font-size: 14px;
+              font-weight: 400; }
+
+.section-follow {
+  margin-bottom: 50px; }
+  .section-follow .section-container .block__header {
+    margin: 150px auto 90px; }
+    .section-follow .section-container .block__header .block__title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 36px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center; }
+  .section-follow .section-container .section-follow__items {
+    display: flex;
+    justify-content: space-between; }
+    .section-follow .section-container .section-follow__items .follow__item {
+      display: flex;
+      flex-basis: 22%;
+      position: relative;
+      overflow: hidden; }
+      .section-follow .section-container .section-follow__items .follow__item .follow__item__photo {
+        display: flex;
+        width: 100%;
+        height: auto; }
+        .section-follow .section-container .section-follow__items .follow__item .follow__item__photo a {
+          display: flex;
+          width: 100%; }
+          .section-follow .section-container .section-follow__items .follow__item .follow__item__photo a img {
+            width: 100%; }
+      .section-follow .section-container .section-follow__items .follow__item .follow__item__hover {
+        opacity: 0;
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 30px;
+        left: 0;
+        background-color: rgba(255, 55, 55, 0.7);
+        transition: opacity .2s linear;
+        transition: top 0.21s linear; }
+        .section-follow .section-container .section-follow__items .follow__item .follow__item__hover .icon_svg_sprite {
+          fill: #fff;
+          position: absolute;
+          display: block;
+          width: 31px;
+          height: 31px;
+          top: 45%;
+          left: 45%; }
+        .section-follow .section-container .section-follow__items .follow__item .follow__item__hover:hover {
+          opacity: 1;
+          top: 0; }
+
+.section-footer {
+  padding: 100px 0 0;
+  background-color: #eee7df; }
+  .section-footer .footer-links {
+    display: flex; }
+    .section-footer .footer-links .footer__item {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-basis: 25%;
+      flex-direction: column; }
+      .section-footer .footer-links .footer__item .footer__item__title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+        text-transform: uppercase;
+        margin-bottom: 25px; }
+      .section-footer .footer-links .footer__item a {
+        font-size: 14px;
+        font-weight: 400;
+        color: #888888; }
+        .section-footer .footer-links .footer__item a:not(:last-child) {
+          margin-bottom: 15px; }
+      .section-footer .footer-links .footer__item .footer__buttons {
+        display: flex;
+        align-items: flex-end; }
+        .section-footer .footer-links .footer__item .footer__buttons .button {
+          padding: 8px 8px;
+          background-color: #fff;
+          border-radius: 4px; }
+          .section-footer .footer-links .footer__item .footer__buttons .button:not(:last-child) {
+            margin-right: 15px; }
+          .section-footer .footer-links .footer__item .footer__buttons .button a {
+            display: flex; }
+            .section-footer .footer-links .footer__item .footer__buttons .button a .button__img {
+              display: flex;
+              align-items: center;
+              margin-right: 7px; }
+              .section-footer .footer-links .footer__item .footer__buttons .button a .button__img .icon_svg_sprite {
+                width: 20px;
+                height: 20px;
+                fill: #ff5353; }
+            .section-footer .footer-links .footer__item .footer__buttons .button a .button__text {
+              font-family: 'Roboto', sans-serif;
+              text-transform: uppercase;
+              color: #000; }
+              .section-footer .footer-links .footer__item .footer__buttons .button a .button__text .btn_txt_1 {
+                font-size: 10px;
+                font-weight: 400;
+                margin-bottom: 3px; }
+              .section-footer .footer-links .footer__item .footer__buttons .button a .button__text .btn_txt_2 {
+                font-size: 13px;
+                font-weight: 500; }
+      .section-footer .footer-links .footer__item .footer__social {
+        display: flex; }
+        .section-footer .footer-links .footer__item .footer__social .social__icon:not(:last-child) {
+          margin-right: 10px; }
+        .section-footer .footer-links .footer__item .footer__social .social__icon a {
+          display: flex;
+          align-items: center;
+          padding: 7px;
+          background-color: #fff; }
+          .section-footer .footer-links .footer__item .footer__social .social__icon a .icon_svg_sprite {
             width: 16px;
-            height: 16px;
-            fill: #adadad;
-            margin-right: 8px; }
-          .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__under .journal__item__under .journal__under__text {
-            font-family: 'Roboto', sans-serif;
-            font-size: 14px;
-            font-weight: 400; }
-            .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__under .journal__item__under .journal__under__text a {
-              color: #adadad; }
+            height: 16px; }
+    .section-footer .footer-links .footer__item__last {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 25%; }
+    .section-footer .footer-links hr {
+      margin: 26px 0 25px; }
+  .section-footer hr {
+    margin: 100px 0 0; }
+  .section-footer .footer-copyright {
+    padding: 25px 0; }
+    .section-footer .footer-copyright .copyright__inner {
+      text-align: center; }
+      .section-footer .footer-copyright .copyright__inner p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #888888; }
+        .section-footer .footer-copyright .copyright__inner p a {
+          color: #ff5353; }
 
 .section-header .header-logo {
   cursor: pointer; }
@@ -873,82 +1010,113 @@ a {
   .section-header .header-links a:hover {
     color: red; }
 
-.section-intro .section-inner .section-container .section-intro__content .section-intro__content__inner .intro__button button {
+.section-header .header-icons .header-icons__item a.svg_hover .icon_svg_sprite {
+  transition: fill .2s linear;
+  fill: #ff5353; }
+
+.section-intro .section-intro__content .section-intro__content__inner .intro__button button {
   transition: color .2s linear;
   transition: background-color .2s linear; }
-  .section-intro .section-inner .section-container .section-intro__content .section-intro__content__inner .intro__button button:hover {
+  .section-intro .section-intro__content .section-intro__content__inner .intro__button button:hover {
     cursor: pointer;
     color: blue;
     background-color: #fff; }
 
-.section-featured .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons {
-  transition: opacity .2s linear; }
-  .section-featured .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon {
-    transition: background-color .2s linear; }
-    .section-featured .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon:hover {
-      cursor: pointer;
-      background-color: #ff5353;
-      fill: #fff; }
-  .section-featured .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon.align__icon {
-    opacity: 1;
-    margin-top: 0;
-    transition: margin-top .3s linear; }
+.section-featured .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon:hover {
+  cursor: pointer;
+  background-color: #ff5353;
+  fill: #fff; }
 
-.section-featured .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons.show__icon {
+.section-featured .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon.align__icon {
+  opacity: 1;
+  margin-top: 0;
+  transition: margin-top .3s linear; }
+
+.section-featured .section-gallery__item .section-gallery-photo .gallery-icons.show__icon {
   opacity: 1; }
 
-.section-feature .section-inner .section-container .section-feature__content .section-feature__content__inner .feature__button button {
+.section-feature .section-feature__content .section-feature__content__inner .feature__button button {
   transition: color .2s linear;
   transition: background-color .2s linear; }
-  .section-feature .section-inner .section-container .section-feature__content .section-feature__content__inner .feature__button button:hover {
+  .section-feature .section-feature__content .section-feature__content__inner .feature__button button:hover {
     cursor: pointer;
     color: blue;
     background-color: #fff; }
 
-.section-popular .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons {
+.section-popular .section-gallery__item .section-gallery-photo .gallery-icons {
   transition: opacity .2s linear; }
-  .section-popular .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon {
+  .section-popular .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon {
     transition: background-color .2s linear; }
-    .section-popular .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon:hover {
+    .section-popular .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon:hover {
       cursor: pointer;
       background-color: #ff5353;
       fill: #fff; }
-  .section-popular .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon.align__icon {
+  .section-popular .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon.align__icon {
     opacity: 1;
     margin-top: 0;
     transition: margin-top .3s linear; }
 
-.section-popular .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons.show__icon {
+.section-popular .section-gallery__item .section-gallery-photo .gallery-icons.show__icon {
   opacity: 1; }
 
-.section-trending .section-inner .section-container .gallery:not(:last-child) {
+.section-trending .gallery:not(:last-child) {
   margin-bottom: 80px; }
 
-.section-trending .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons {
+.section-trending .gallery .section-gallery__item .section-gallery-photo .gallery-icons {
   transition: opacity .2s linear; }
-  .section-trending .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon {
+  .section-trending .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon {
     transition: background-color .2s linear; }
-    .section-trending .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon:hover {
+    .section-trending .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon:hover {
       cursor: pointer;
       background-color: #ff5353;
       fill: #fff; }
-  .section-trending .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon.align__icon {
+  .section-trending .gallery .section-gallery__item .section-gallery-photo .gallery-icons .gallery-icons__inner .icon.align__icon {
     opacity: 1;
     margin-top: 0;
     transition: margin-top .3s linear; }
 
-.section-trending .section-inner .section-container .gallery .section-gallery__item .section-gallery-photo .gallery-icons.show__icon {
+.section-trending .gallery .section-gallery__item .section-gallery-photo .gallery-icons.show__icon {
   opacity: 1; }
 
-.section-journal .section-inner .section-container .section__journal__items .journal__item .journal__content .journal__date a {
+.section-journal .section__journal__items .journal__item .journal__content .journal__date a {
   transition: color .2s linear; }
-  .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__content .journal__date a:hover {
+  .section-journal .section__journal__items .journal__item .journal__content .journal__date a:hover {
     color: #ff5353; }
 
-.section-journal .section-inner .section-container .section__journal__items .journal__item .journal__content .journal__text a {
+.section-journal .section__journal__items .journal__item .journal__content .journal__text a {
   transition: color .2s linear; }
-  .section-journal .section-inner .section-container .section__journal__items .journal__item .journal__content .journal__text a:hover {
+  .section-journal .section__journal__items .journal__item .journal__content .journal__text a:hover {
     color: #ff5353; }
 
-.section-journal .section-inner .section-container .section__journal__items .journal__item .journal__under .journal__item__under .journal__under__text a:hover {
+.section-journal .section__journal__items .journal__item .journal__under .journal__item__under .journal__under__icon a.svg_hover {
+  transition: color .2s linear;
   color: #ff5353; }
+  .section-journal .section__journal__items .journal__item .journal__under .journal__item__under .journal__under__icon a.svg_hover .icon_svg_sprite {
+    transition: fill .2s linear;
+    fill: #ff5353; }
+
+.section-footer .footer-links .footer__item a {
+  transition: color .2s linear; }
+  .section-footer .footer-links .footer__item a:hover {
+    color: #ff5353; }
+
+.section-footer .footer-links .footer__item .footer__buttons .button.hover_bg {
+  background-color: #ff5353;
+  transition: background-color .3s linear; }
+  .section-footer .footer-links .footer__item .footer__buttons .button.hover_bg a.hover_link .button__img {
+    transition: fill .2s linear; }
+    .section-footer .footer-links .footer__item .footer__buttons .button.hover_bg a.hover_link .button__img .icon_svg_sprite {
+      fill: #fff; }
+  .section-footer .footer-links .footer__item .footer__buttons .button.hover_bg a.hover_link .button__text {
+    transition: color .2s linear; }
+    .section-footer .footer-links .footer__item .footer__buttons .button.hover_bg a.hover_link .button__text .btn_txt_1 {
+      color: #fff; }
+    .section-footer .footer-links .footer__item .footer__buttons .button.hover_bg a.hover_link .button__text .btn_txt_2 {
+      color: #fff; }
+
+.section-footer .footer-links .footer__social .social__icon a.social_hover {
+  background-color: #ff5353;
+  transition: background-color .2s linear; }
+  .section-footer .footer-links .footer__social .social__icon a.social_hover .icon_svg_sprite {
+    fill: #fff;
+    transition: fill .2s linear; }
