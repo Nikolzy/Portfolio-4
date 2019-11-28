@@ -12,17 +12,18 @@ $(document).ready(function() {
 
     // Gallery icons
     $('.section-gallery__item').on('mouseenter mouseleave', function() {
-        let get_id = this.id;
-        let new_icon = $(`.icon.${get_id}`);
-        let new_block_icons = $(`.gallery-icons.${get_id}`);
-
-        new_icon.toggleClass('align__icon');
-        new_block_icons.toggleClass('show__icon');
+        $(`.icon.${this.id}`).toggleClass('align__icon');
+        $(`.gallery-icons.${this.id}`).toggleClass('show__icon');
     })
 
     // Journal icons
     $('.journal__item__under').on('mouseenter mouseleave', function() {
         $(`.${this.id}`).toggleClass('svg_hover');
+    })
+
+    // Follow us
+    $('.follow__item').on('mouseenter mouseleave', function() {
+        $(`.${this.id}`).toggleClass('follow__hover');
     })
 
 
