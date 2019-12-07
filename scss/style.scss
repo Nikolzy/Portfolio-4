@@ -139,7 +139,9 @@ $links_hover_1: red;
     box-sizing: border-box;
 }
 
-body {}
+body {
+    overflow-x: hidden;
+}
 
 h1,
 h2,
@@ -234,6 +236,45 @@ p {
             display: flex;
             align-items: center;
         }
+        &-nav {
+            #menu {
+                width: 30px;
+                height: 25px;
+                position: absolute;
+                top: 6px;
+                right: 150px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .burger-menu {
+                display: none;
+                width: 25px;
+                height: 1px;
+                background-color: #000;
+                position: absolute;
+                top: 12px;
+                right: 3px;
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 7px;
+                    width: 25px;
+                    height: 1px;
+                    background-color: #000;
+                }
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 7px;
+                    width: 25px;
+                    height: 1px;
+                    background-color: #000;
+                }
+            }
+        }
         &-links {
             display: flex;
             align-items: center;
@@ -282,33 +323,6 @@ p {
         }
         &-ul {
             display: flex;
-            .burger__menu {
-                display: none;
-                width: 25px;
-                height: 1px;
-                background-color: #000;
-                position: absolute;
-                top: -22px;
-                right: 173px;
-                &:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    top: 7px;
-                    width: 25px;
-                    height: 1px;
-                    background-color: #000;
-                }
-                &:before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    bottom: 7px;
-                    width: 25px;
-                    height: 1px;
-                    background-color: #000;
-                }
-            }
         }
         &-links {
             &:not(:last-child) {
@@ -1359,18 +1373,21 @@ p {
         padding: 24px 30px;
     }
     .section-header .header-ul {
-        // display: none;
+        // opacity: 0;
         background: #fff;
-        display: flex;
+        display: none;
         flex-direction: column;
         position: absolute;
-        width: 107%;
-        height: 355px;
+        width: 109%;
+        height: 356px;
         top: 38px;
         left: -30px;
         padding-top: 30px;
     }
-    .section-header .header-ul .burger__menu {
+    .section-header .header-ul.showMenu {
+        display: flex;
+    }
+    .section-header .header-nav .burger-menu {
         display: block;
     }
     .section-header .header-links.home__link .home:after {
@@ -1379,7 +1396,7 @@ p {
     .section-header .header-links {
         align-items: flex-start;
     }
-    .section-header .header-links:not(:last-child) {
+    .section-header .header-links {
         margin-right: 0;
         padding-left: 35px;
     }
@@ -1560,6 +1577,103 @@ p {
     }
     .section-footer .footer-links hr {
         display: none;
+    }
+}
+
+@media(max-width: 795px) {
+    // Features
+    .section-feature .section-inner {
+        height: 265px;
+    }
+    .section-feature .section-inner .section-container .section-feature__img img {
+        width: 95%;
+        height: 265px;
+    }
+    .section-feature .section-inner .section-container .section-feature__content {
+        width: 100%;
+        height: 265px;
+    }
+    .section-feature .section-inner .section-container .section-feature__content__inner {
+        width: 115%;
+    }
+    .section-feature .section-inner .section-container .section-feature__content .feature__title {
+        margin-bottom: 25px;
+        margin-top: 35px;
+        font-size: 40px;
+    }
+    .section-feature .section-inner .section-container .section-feature__content .feature__subtitle {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    // Header 
+    .section-header .header-ul {
+        width: 120%;
+    }
+    //Intro 
+    .section-intro .section-inner {
+        height: 265px;
+    }
+    .section-intro .section-inner .section-container .section-intro__img img {
+        width: 97%;
+        height: 265px;
+    }
+    .section-intro .section-inner .section-container .section-intro__content__inner {
+        width: 163%;
+    }
+    .section-intro .section-inner .section-container .section-intro__content {
+        height: 265px;
+    }
+    .section-intro .section-inner .section-container .section-intro__content .intro__title {
+        font-size: 30px;
+    }
+    // Advantage
+    .section-advantage .section__advantage__items {
+        flex-direction: column;
+        margin: 0 30% 20px;
+    }
+    // Follow us
+    .section-follow .section-container .section-follow__items {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 650px) {
+    // Advantages
+    .section-advantage .section__advantage__items {
+        margin: 0px 20% 20px;
+    }
+}
+
+@media (max-width: 540px) {
+    // Footer
+    .section-footer .footer-links .footer__item {
+        flex-basis: 100%;
+    }
+    .section-footer .footer-links .footer__item__last {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 525px) {
+    // Feature
+    .section-feature .section-inner {
+        height: 530px;
+    }
+    .section-feature .section-inner .section-container {
+        flex-direction: column;
+    }
+    .section-feature .section-inner .section-container .section-feature__content__inner {
+        width: 100%;
+    }
+    .section-feature .section-inner .section-container .section-feature__content {
+        padding-right: 0;
+        margin-left: 0;
+    }
+    .section-feature .section-inner .section-container .section-feature__img img {
+        width: 100%;
     }
 }
 

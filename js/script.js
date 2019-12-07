@@ -37,4 +37,9 @@ $(document).ready(function() {
     $('.social__icon').on('mouseenter mouseleave', function() {
         $(`.${this.id}`).toggleClass('social_hover');
     })
+
+    // Burger menu
+    $('#menu').on('click', function() {
+        $('.header-ul').toggleClass('showMenu');
+    })
 });
